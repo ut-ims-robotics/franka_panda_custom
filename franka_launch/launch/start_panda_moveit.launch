@@ -1,8 +1,9 @@
 <launch>
     <arg name="robot_ip" default="192.168.1.100"/>
-    <arg name="load_gripper" default="true" />
+    <arg name="load_gripper" default="false" />
+    <arg name="enable_rviz" default="false" />
 
-    <include file="$(find franka_control)/launch/franka_control.launch">
+    <include file="$(find franka_control)/launch/franka_control.launch" output="screen">
         <arg name="load_gripper" value="$(arg load_gripper)" />
         <arg name="robot_ip" value="$(arg robot_ip)" />
     </include>
@@ -11,10 +12,10 @@
         <arg name="robot_ip" value="$(arg robot_ip)" />
     </include>
 
-    <include file="$(find panda_moveit_config)/launch/panda_moveit.launch">
-        <arg name="controller" value="position" />
+    <include file="$(find panda_moveit_config)/launch/panda_moveit.launch" output="screen">
+        <arg name="controller" value="effort" />
         <arg name="load_gripper" value="$(arg load_gripper)" />
     </include>
 
-    <include file="$(find panda_moveit_config)/launch/moveit_rviz.launch" />
+    <include if="$(arg enable_rviz)" file="$(find panda_moveit_config)/launch/moveit_rviz.launch" />
 </launch>

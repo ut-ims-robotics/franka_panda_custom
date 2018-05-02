@@ -1,0 +1,6 @@
+<launch>
+
+    <include file="$(find keyboard_publisher)/launch/key_to_twist.launch"/>
+    <include file="$(find franka_jog_arm)/launch/franka_jog_arm.launch.xml" />
+
+</launch>

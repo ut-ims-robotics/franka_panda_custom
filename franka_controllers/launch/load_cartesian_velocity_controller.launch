@@ -1,0 +1,6 @@
+<launch>
+    <rosparam command="load" file="$(find franka_controllers)/config/cartesian_velocity_controller_conf.yaml"/>
+    <rosparam command="load" file="$(find franka_controllers)/config/franka_controllers.yaml"/>
+    <node name="cartesian_velocity_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+          args="cartesian_velocity_controller"/>
+</launch>

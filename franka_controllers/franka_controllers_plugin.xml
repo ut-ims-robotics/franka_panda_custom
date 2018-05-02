@@ -1,0 +1,8 @@
+<library path="lib/libfranka_controllers">
+    <class name="franka_controllers/CartesianVelocityController" type="franka_controllers::CartesianVelocityController"
+           base_class_type="controller_interface::ControllerBase">
+        <description>
+            A controller that executes a short motion based on cartesian velocities to demonstrate correct usage
+        </description>
+    </class>
+</library>
