@@ -1,0 +1,19 @@
+#these are example parameters for franka panda arm
+contact_control:
+  #topics
+  ft_in_topic: /franka_state_controller/F_ext
+  velocity_out_topic: /ee_velocity
+  #robot frames
+  move_group: panda_arm #The move group of the robot to be controlled.
+  fixed_frame: panda_link0 #The name of the fixed frame.
+  velocity_command_frame: panda_link7 #The name of the velocity command frame.
+  ft_sensor_frame: panda_link7 #The name of the force/torque sensor frame.
+  control_frame: panda_link7 #The name of the control frame that velocity commands are inputed in.
+  #filter
+  lp_filter_enabled: true
+  lp_filter_delta_t: 0.62
+  lp_filter_cutoff_freq: 0.53
+  #mechanical properties
+  flip_xy: true
+  x_direction: 1
+  y_direction: 1

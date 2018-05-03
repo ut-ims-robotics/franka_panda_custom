@@ -1,7 +1,7 @@
 <launch>
     <arg name="robot_ip" default="192.168.1.100"/>
     <arg name="load_gripper" default="false" />
-    <arg name="enable_rviz" default="false" />
+    <arg name="enable_rviz" default="true" />
 
     <include file="$(find franka_control)/launch/franka_control.launch" output="screen">
         <arg name="load_gripper" value="$(arg load_gripper)" />

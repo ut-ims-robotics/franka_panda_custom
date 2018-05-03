@@ -1,3 +1,3 @@
 panda_cartesian_velocity_controller:
   velocity_in_topic: /ee_velocity
-  acceleration: 0.00035
+  acceleration: 0.0005

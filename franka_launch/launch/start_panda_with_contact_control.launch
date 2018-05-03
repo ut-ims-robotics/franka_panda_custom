@@ -1,0 +1,18 @@
+<launch>
+    <arg name="robot_ip" default="192.168.1.100"/>
+
+    <include file="$(find franka_launch)/launch/start_panda_jogging.launch">
+        <arg name="robot_ip" value="$(arg robot_ip)"/>
+        <arg name="keyboard" value="false"/>
+    </include>
+
+    <include file="$(find panda_moveit_config)/launch/move_group.launch">
+        <arg name="load_gripper" value="false"/>
+        <arg name="allow_trajectory_execution" value="false" />
+    </include>
+
+    <include file="$(find contact_control)/launch/contact_control_node.launch"/>
+
+    <!-- override default params -->
+    <rosparam command="load" file="$(find franka_launch)/conf/panda_contact_control_conf.yaml"/>
+</launch>
