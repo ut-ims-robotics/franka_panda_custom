@@ -41,7 +41,9 @@ namespace franka_controllers {
         ros::NodeHandle n_;
         ros::Subscriber cmd_sub_;
         std::vector<double> current_velocities_;
+        std::vector<double> current_accelerations_;
         double acceleration_;
+        double acceleration_acc_;
 
 
         // ROS subscriber callbacks
